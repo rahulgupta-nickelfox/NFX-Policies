@@ -3,6 +3,9 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+const LOGO_SRC =
+  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAAAAABWESUoAAABGklEQVR4AX3RIYyDQBRF0ee9dytRTdYgK0lq0FXYWhwKXYtPRlWg6k0VAq8wONw4BOruDynJBGa54quj3hfnIbBqItUBSEsOlWkAMjXsapQRAr0J4609UE9QryPQyBajYkCeb15xkLzc2usSB/rRt584SOYNzIms2x54Llr7xcfAAA+tPWA4gg/gtOaAzx64bZ5tMhcC0goLr2CP6hqA+wzTAlqDZYK5CMB8gyWtprus+1Slhm9zAOieppQ3sppcCzw7QkDdw+g6WZ2boK8JgZUtGNm+umTsgc+xZGHl/gB4N0AqXYHmwxFQDlBJFQwlMUAGrdRCRhyMBb3UU0zEAW27SHaJA6vwSeIL/gdcpAtnYJTGU4BzHMFpf3erD5OowKdLAAAAAElFTkSuQmCC';
+
 const navItems = [
   {
     href: '/policies',
@@ -30,7 +33,7 @@ export function Sidebar() {
       {/* Brand */}
       <div className="border-border flex h-[var(--topbar-height)] items-center gap-3 border-b px-5">
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/nickelfox.png" alt="Nickelfox" width={28} height={28} />
+        <img src={LOGO_SRC} alt="Nickelfox" width={28} height={28} />
         <span className="text-text-primary text-sm font-bold tracking-tight">NFX Policies</span>
       </div>
 
