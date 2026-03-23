@@ -15,4 +15,19 @@ const envSchema = z.object({
   DEFAULT_ORG_ID: z.string().uuid(),
 });
 
-export const env = envSchema.parse(process.env);
+type Env = z.infer<typeof envSchema>;
+
+let _env: Env | null = null;
+
+function getEnv(): Env {
+  if (!_env) {
+    _env = envSchema.parse(process.env);
+  }
+  return _env;
+}
+
+export const env = new Proxy({} as Env, {
+  get(_, key: string) {
+    return getEnv()[key as keyof Env];
+  },
+});
