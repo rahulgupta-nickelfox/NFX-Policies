@@ -6,6 +6,7 @@ import type { NextAuthConfig } from 'next-auth';
  * The full config with providers and callbacks lives in auth.ts.
  */
 export const authConfig = {
+  trustHost: true,
   session: { strategy: 'jwt' },
   pages: {
     signIn: '/login',
